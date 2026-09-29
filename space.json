@@ -1,0 +1,8 @@
+{
+  "entry": "client/dist/index.html",
+  "managedCronJobs": [],
+  "name": "BIZTRACK BURUNDI",
+  "platformVersion": 24,
+  "runtime": "typescript",
+  "slug": "biztrack-burundi-app"
+}

@@ -1,0 +1,6 @@
+node_modules/
+.bun-cache/
+*.db
+*.db-journal
+dist/
+.space-build/
