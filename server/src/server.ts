@@ -124,6 +124,9 @@ async function serveStatic(pathname: string): Promise<Response> {
 // ---------------------------------------------------------------------------
 
 Bun.serve({
+  // 0.0.0.0 explicite : Render exige l'écoute sur toutes les interfaces
+  // (pas localhost) pour son health check et le routage.
+  hostname: "0.0.0.0",
   port: PORT,
   async fetch(req) {
     const url = new URL(req.url);
