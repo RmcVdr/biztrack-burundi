@@ -1,0 +1,9 @@
+node_modules
+.bun-cache
+client/dist
+server/dist
+app.db
+*.db
+.git
+.gitignore
+.DS_Store

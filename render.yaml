@@ -1,0 +1,24 @@
+# Blueprint Render — déploiement Docker de BIZTRACK BURUNDI
+# Utilisation : Render Dashboard → New → Blueprint → connecter le dépôt Git
+# contenant ce projet, ou New → Web Service → Docker (déploiement manuel).
+services:
+  - type: web
+    name: biztrack-burundi
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 10000
+      # Par défaut la base SQLite vit dans l'image (éphémère : les données
+      # sont perdues à chaque redéploiement). Pour des données persistantes,
+      # ajoutez un disque Render (offre payante) et pointez DB_PATH dessus :
+      # disk:
+      #   name: biztrack-data
+      #   mountPath: /data
+      #   sizeGB: 1
+      # envVars:
+      #   - key: DB_PATH
+      #     value: /data/app.db
